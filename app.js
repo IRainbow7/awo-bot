@@ -43,7 +43,7 @@ client.on('ready', () => {
 
 function setActivity() {
     //Variable Array for what the setGame can be set to
-    var Gameinfo = [`tamotoji.tk | k!website`, `Run on ${client.guilds.size} Servers`, `${config.prefix}help`,
+    var Gameinfo = [`${config.prefix}invite`, `Run on ${client.guilds.size} Servers`, `${config.prefix}help`,
         `Using ${(((process.memoryUsage().heapUsed)/1024)/1024).toFixed(0)}Mb's of RAM`, `Ping to API: ${(client.ping).toFixed(0)} Ms`, `I ❤ CAMBODIA` // Change these to what you want, add as many or as few as you want to
     ]
 
