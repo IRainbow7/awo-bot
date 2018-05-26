@@ -646,7 +646,7 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
     })
     const embed = new Discord.RichEmbed()
         .setColor(0xCB5A5E)
-        .addField('<:Miraitrophy:449842109776789524> Leaderboard :', `\`\`\`${table.table(possibleInvites)}\`\`\``);
+        .addField('Leaderboard :', `\`\`\`${table.table(possibleInvites)}\`\`\``);
     send(message.channel, embed, {
         name: 'Server Invites',
         icon: 'https://image.flaticon.com/icons/png/512/262/262831.png'
