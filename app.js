@@ -209,7 +209,7 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
 
    if(command === "autoroleplaying" | command === "playinglist") {
 	   message.delete();
-	   message.channel.send("**AutoRolePlaying :** \n\n__**Example**__\n\n```Playing Minecraft\nPlaying <GameName>```");
+	   message.channel.send("**AutoRolePlaying :** \n\n__**Example**__\n```Playing Minecraft\nPlaying <GameName>```\n\n**Working On Role :**\n```-PLAYERUNKNOWN'S BATTLEGROUNDS \n-Minecraft \n-Fortnite \n-Grand Theft Auto V \n-Rule Of Survival \n-Counter-Strike Global Offensive \n-Overwatch```");
 }
 				
     if(command === "gif") {
