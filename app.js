@@ -209,7 +209,7 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
 
    if(command === "autoroleplaying" | command === "playinglist") {
 	   message.delete();
-	   message.channel.send("**AutoRolePlaying :** \n\n__**Example**__\n\n```Playing Minecraft\nPlaying <GameName>```);
+	   message.channel.send("**AutoRolePlaying :** \n\n__**Example**__\n\n```Playing Minecraft\nPlaying <GameName>```");
 }
 				
     if(command === "gif") {
