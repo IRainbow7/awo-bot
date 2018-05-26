@@ -73,6 +73,21 @@ client.on("presenceUpdate", (oldMember, newMember) => {
     
   }  
 });
+
+client.on("presenceUpdate", (oldMember, newMember) => {
+  let guild = newMember.guild;
+  let playRole = guild.roles.find("name", "Playing Rule Of Survival");
+  if(!playRole) return;  
+ 
+  if(newMember.user.presence.game && newMember.user.presence.game.name === "Rule Of Survival") {
+    newMember.addRole(playRole);
+  } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
+    newMember.removeRole(playRole);
+  let guild = newMember.guild;
+  if(!playRole) return;
+    
+  }  
+});
  
 client.on("presenceUpdate", (oldMember, newMember) => {
   let guild = newMember.guild;
@@ -169,8 +184,8 @@ client.on("message", async message => {
     if (!['356510829920780289',].includes(message.author.id)) return message.reply(`**You cant do that, only the bot developer can! || do ${config.prefix}dev to show bot dev** `).then(msg => msg.delete(9000));
     message.channel.send('**Leaveing Server !**')
     message.guild.leave();
-  };
-
+  };	
+	
   if(command === "glist" || command === "guildlist") {
 message.delete();
 //if(message.author.id !== ownerID) return message.channel.send('Heng Ot Mean Permission Use Ah Ng Te xD');
@@ -192,6 +207,11 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
 	message.channel.send(message2);
   }
 
+   if(command === "autoroleplaying" | command === "playinglist") {
+	   message.delete();
+	   message.channel.send("**AutoRolePlaying :** \n\n__**Example**__\n\n```Playing Minecraft\nPlaying <GameName>```);
+}
+				
     if(command === "gif") {
   if (message.author.bot) return;
   if (message.channel.type == "dm") return;
