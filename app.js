@@ -212,6 +212,22 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
 	   message.channel.send("**AutoRolePlaying :** \n\n__**Example**__\n```Playing Minecraft\nPlaying <GameName>```\n\n**Working On Role :**\n```-PLAYERUNKNOWN'S BATTLEGROUNDS \n-Minecraft \n-Fortnite \n-Grand Theft Auto V \n-Rule Of Survival \n-Counter-Strike Global Offensive \n-Overwatch```");
 }
 				
+    if(command === "hentai") {
+  let {body} = await superagent
+    .get(`https://nekos.life/api/v2/img/Random_hentai_gif`);
+    if (!message.channel.nsfw) return message.reply(" You must be in a N.S.F.W channel to use this command.");
+  
+    let hentaiEmbed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setTitle("Hentai is art.")
+    .setImage(body.url)
+    .setColor("RANDOM")
+    .setFooter("Bot Version: 0.0.3");
+
+    message.channel.send(hentaiEmbed);
+
+}
+	
     if(command === "gif") {
   if (message.author.bot) return;
   if (message.channel.type == "dm") return;
