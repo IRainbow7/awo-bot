@@ -186,18 +186,9 @@ client.on("message", async message => {
     message.guild.leave();
   };	
 
-	  if(command === "discordpartner" || command === "discordpartners") {
-  if(!message.member.hasPermission("MANAGE_MESSAGE")) return message.channel.send(`${message.author.username} You Don\'t Have **Manage Message** To Use This Commands !`);
+  if(command === "discordpartner" || command === "discordpartners") {
+   if(!message.member.hasPermission("MANAGE_MESSAGE")) return message.channel.send(`${message.author.username} You Don\'t Have **Manage Message** To Use This Commands !`);
   message.delete();
-    if(args[0] == "help"){
-  const help = new Discord.RichEmbed()
-  .setDescription(`**${botconfig.prefix}discordpartner** **owneruser  •  servername  •  3 category •  description  •  invitelinks**`)
-  .addField(`Examples`, `${botconfig.prefix}discordpartner MIRAI MIRAI-SERVER ANIME GAMING COMMUNITY NODESCRIPTION https://discord.gg/ZWWD7zT`)
-  .setFooter('no work on [SPAEC] •  MIRAI SERVE = MIRAI-SERVER')
-  .setColor('RANDOM')
-  message.channel.send(help);
-    return;
-  }
   let owneruser = args[0]; 
   let servername = args[1];
   let category = args[2];
