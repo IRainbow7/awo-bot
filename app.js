@@ -191,14 +191,15 @@ client.on("message", async message => {
     message.channel.send('**Leaveing Server !**')
     message.guild.leave();
   };
-if(command === "stats") {
-	 let cpuLol;
+	
+ if(command === "botstats") {
+  let cpuLol;
   cpuStat.usagePercent(function(err, percent, seconds) {
     if (err) {
       return console.log(err);
     }
   const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
-  const embedStats = new Discord.MessageEmbed()
+  const embedStats = new Discord.RichEmbed()
     .setTitle("*** Stats ***")
     .setColor("RANDOM")
     .addField("• Mem Usage", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`, true)
@@ -206,13 +207,16 @@ if(command === "stats") {
     .addField("• Users", `${client.users.size.toLocaleString()}`, true)
     .addField("• Servers", `${client.guilds.size.toLocaleString()}`, true)
     .addField("• Channels ", `${client.channels.size.toLocaleString()}`, true)
-    .addField("• Discord.js", `v${version}`, true)
+    .addField("• Discord.js", `v${client}`, true)
     .addField("• Node", `${process.version}`, true)
     .addField("• CPU", `\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``)
     .addField("• CPU usage", `\`${percent.toFixed(2)}%\``,true)
     .addField("• Arch", `\`${os.arch()}\``,true)
     .addField("• Platform", `\`\`${os.platform()}\`\``,true)
+    .setFooter("• Bot Create By : TaMoToJiᵛᵉʳᶦᶠᶦᵉᵈ林坓龙#5881")
     message.channel.send(embedStats)
+    message.delete(5000);
+    message.react("🚀");
   });
 };
 	
