@@ -785,7 +785,7 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
     .addField("Dev", "`leftserver`  `glist`")
     .addField("Moderation", "`clear`  `say`  `chatto`  `annto`  `discordpartner`  `kick`  `ban`")
     .addField("Info", "`serverinfo`  `serverrule`   `topinvites`  `dev`  `invitelist`")
-    .addField("General", "`ping`  `avatar`  `emojilist`   `jumboemoji`  `invite` ")
+    .addField("General", "`ping`  `avatar`  `emojilist`   `jumboemoji`  `invite`  `botstats`   `userinfo`")
     .addField("Fun", "`get`  `bond` `ascii`  `gif`  `random` `status`  `luckymunber`  `profilemagik`")
     .setFooter(`Requested by : ${message.author.tag}`);
 
