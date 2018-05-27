@@ -806,7 +806,7 @@ if(args[0] == "help"){
   let username = args[0]; 
   let channelURL = args[1];
  
-    send(message.channel, `@here\n\n•  Support YouTube Channel : **${username}**\n\n👍 **LIKE**\n🔗 **SHERE**\n<:YouTube:447636911838724097> **SUBSCRIBE**\n\n__**CHANNEL-URL**__  •  ${channelURL} !`, {
+    send(message.channel, `@here\n\n•  Support YouTube Channel : **${username}**\n\n👍 **LIKE**\n🔗 **SHERE**\n<:YouTube:447660670108827659> **SUBSCRIBE**\n\n__**CHANNEL-URL**__  •  ${channelURL} !`, {
         name: 'YouTubeChannel',
         icon: 'https://cdn.discordapp.com/attachments/434019301448613908/447626767222439947/image.jpg'
      
