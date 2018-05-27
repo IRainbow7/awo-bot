@@ -790,7 +790,7 @@ if(args[0] == "help"){
   let username = args[0]; 
   let videoURL = args[1];
  
-    send(message.channel, `<:Pin1:447234642785992704> @here\n\n<:sparkles_fiery:447631785682010150>Username • **${username}** Has Upload Video From YouTube !<:sparkles_fiery:447631785682010150>\n\n${videoURL} __**Go Check Now**__`, {
+    send(message.channel, `📌 @here\n\nUsername ● **${username}** Has Upload Video From YouTube !\n\n${videoURL} __**Go Check Now**__`, {
         name: 'YouTube',
         icon: 'https://cdn.discordapp.com/attachments/434019301448613908/447626767222439947/image.jpg'
      
