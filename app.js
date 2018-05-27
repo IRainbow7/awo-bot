@@ -195,10 +195,7 @@ client.on("message", async message => {
   .addField(`Examples`, `${botconfig.prefix}discordpartner MIRAI MIRAI-SERVER ANIME GAMING COMMUNITY NODESCRIPTION https://discord.gg/ZWWD7zT`)
   .setFooter('no work on [SPAEC] •  MIRAI SERVE = MIRAI-SERVER')
   .setColor('RANDOM')
-    send(message.channel, help, {
-        name: 'Discord Partners Help :',
-        icon: 'https://cdn.discordapp.com/attachments/446630932145766401/447297316228038666/financiacionobras.png'
-    })
+  message.channel.send(help);
     return;
   }
   let owneruser = args[0]; 
