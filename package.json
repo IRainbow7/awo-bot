@@ -22,6 +22,7 @@
     "table": "^4.0.3",
     "quick.hook": "^1.3.0",
     "strict-uri-encode": "^2.0.0",
+    "moment-duration-format": "^2.2.2",
     "memjs": "^1.1.0",
     "memejs": "^1.0.4",
     "yomama": "^1.0.0",
