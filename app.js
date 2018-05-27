@@ -185,8 +185,32 @@ client.on("message", async message => {
     if (!['356510829920780289',].includes(message.author.id)) return message.reply(`**You cant do that, only the bot developer can! || do ${config.prefix}dev to show bot dev** `).then(msg => msg.delete(9000));
     message.channel.send('**Leaveing Server !**')
     message.guild.leave();
-  };	
-
+  };
+if(command === "stats") {
+	 let cpuLol;
+  cpuStat.usagePercent(function(err, percent, seconds) {
+    if (err) {
+      return console.log(err);
+    }
+  const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
+  const embedStats = new Discord.MessageEmbed()
+    .setTitle("*** Stats ***")
+    .setColor("RANDOM")
+    .addField("• Mem Usage", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`, true)
+    .addField("• Uptime ", `${duration}`, true)
+    .addField("• Users", `${client.users.size.toLocaleString()}`, true)
+    .addField("• Servers", `${client.guilds.size.toLocaleString()}`, true)
+    .addField("• Channels ", `${client.channels.size.toLocaleString()}`, true)
+    .addField("• Discord.js", `v${version}`, true)
+    .addField("• Node", `${process.version}`, true)
+    .addField("• CPU", `\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``)
+    .addField("• CPU usage", `\`${percent.toFixed(2)}%\``,true)
+    .addField("• Arch", `\`${os.arch()}\``,true)
+    .addField("• Platform", `\`\`${os.platform()}\`\``,true)
+    message.channel.send(embedStats)
+  });
+};
+	
   if(command === "userinfo") {
 	let user;
     if (message.mentions.users.first()) {
