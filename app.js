@@ -185,6 +185,31 @@ client.on("message", async message => {
     message.channel.send('**Leaveing Server !**')
     message.guild.leave();
   };	
+
+	  if(command === "discordpartner" || command === "discordpartners") {
+  if(!message.member.hasPermission("MANAGE_MESSAGE")) return message.channel.send(`${message.author.username} You Don\'t Have **Manage Message** To Use This Commands !`);
+  message.delete();
+    if(args[0] == "help"){
+  const help = new Discord.RichEmbed()
+  .setDescription(`**${botconfig.prefix}discordpartner** **owneruser  •  servername  •  3 category •  description  •  invitelinks**`)
+  .addField(`Examples`, `${botconfig.prefix}discordpartner MIRAI MIRAI-SERVER ANIME GAMING COMMUNITY NODESCRIPTION https://discord.gg/ZWWD7zT`)
+  .setFooter('no work on [SPAEC] •  MIRAI SERVE = MIRAI-SERVER')
+  .setColor('RANDOM')
+    send(message.channel, help, {
+        name: 'Discord Partners Help :',
+        icon: 'https://cdn.discordapp.com/attachments/446630932145766401/447297316228038666/financiacionobras.png'
+    })
+    return;
+  }
+  let owneruser = args[0]; 
+  let servername = args[1];
+  let category = args[2];
+  let category2 = args[3];
+  let category3 = args[4];
+  let description = args[5];
+  let links = args[6];
+  message.channel.send(`<:botton:445430903687217164>**OWNER NAME • ${owneruser}<:botton:445430903687217164>**\n\n<:sparkles_fiery:446628397855145986>**SERVE NAME • ${servername}**<:sparkles_fiery:446628397855145986>\n\n__**• Category**__\n\n${category} • ${category2} • ${category3}\n\n__**Server Description**__\n\n${description}\n\n__**• InviteLInk**__\n\n${links}\n\n**• Submit to advertise discord server** • **https://goo.gl/forms/oAP5JsgYmjGuu70X2**`);
+}
 	
   if(command === "glist" || command === "guildlist") {
 message.delete();
@@ -722,7 +747,7 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
     .setAuthor(`${config.prefix}commands`, message.author.avatarURL)
     .setColor('#FF0000')
     .addField("Dev", "`leftserver`  `glist`")
-    .addField("Moderation", "`clear`  `say`  `chatto`  `annto`  `dpto`  `kick`  `ban`")
+    .addField("Moderation", "`clear`  `say`  `chatto`  `annto`  `discordpartner`  `kick`  `ban`")
     .addField("Info", "`serverinfo`  `serverrule`   `topinvites`  `dev`  `invitelist`")
     .addField("General", "`ping`  `avatar`  `emojilist`   `jumboemoji`  `invite` ")
     .addField("Fun", "`get`  `bond` `ascii`  `gif`  `random` `status`  `luckymunber`  `profilemagik`")
@@ -859,13 +884,6 @@ if(command === "serverrule") {
         message.channel.send(EmojiList); 
         message.react("📥");
   }
-
-  if(command === "ctc" || command === "createtextchannel") {
-  let logs = args.join(" ");
-  if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send("**You do not have permission to do that!**");
-  message.guild.createChannel(logs, 'text');
-  message.channel.send(`✅ **${message.author.username}** Has Create Text Channel **${logs}**`).then(msg => msg.delete(8000));
-}
 
 });
 
