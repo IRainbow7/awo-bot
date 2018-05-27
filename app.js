@@ -22,6 +22,10 @@ const ownerID = ["356510829920780289", "424916247696900135"];
 const gifSearch = require("gif-search");
 const figlet = require('figlet');
 const moment = require('moment');
+require("moment-duration-format");
+let os = require('os')
+let cpuStat = require("cpu-stat")
+
 
 //const swearWords = ["XNXX", "xnxx", "FUCK", "fuck", "SHIT", "shit", "PORN", "porn"];
 client.on("message", (message) => {
