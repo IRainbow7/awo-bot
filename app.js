@@ -186,9 +186,9 @@ client.on("message", async message => {
     const command = args.shift().toLowerCase(); 
 
   if(command === "leftserver" || command === "leaveserver") {
-   message.delete(9000)
+   message.delete()
     if (!['356510829920780289',].includes(message.author.id)) return message.reply(`**You cant do that, only the bot developer can! || do ${config.prefix}dev to show bot dev** `).then(msg => msg.delete(9000));
-    message.channel.send('**Leaveing Server !**')
+    message.channel.send('**ByeBye @here Am Leaveing Server Now!**')
     message.guild.leave();
   };
 	
