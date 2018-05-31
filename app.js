@@ -82,10 +82,10 @@ client.on("presenceUpdate", (oldMember, newMember) => {
 
 client.on("presenceUpdate", (oldMember, newMember) => {
   let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing Rule Of Survival");
+  let playRole = guild.roles.find("name", "Playing Rules Of Survival");
   if(!playRole) return;  
  
-  if(newMember.user.presence.game && newMember.user.presence.game.name === "Rule Of Survival") {
+  if(newMember.user.presence.game && newMember.user.presence.game.name === "Rules Of Survival") {
     newMember.addRole(playRole);
   } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
     newMember.removeRole(playRole);
