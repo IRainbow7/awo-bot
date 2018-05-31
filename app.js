@@ -356,7 +356,7 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
 
   if(command === "magik" || command === "profilemagik") { 
     let target = message.mentions.users.first() || message.author;
-    let wait = await message.channel.send('waiting ...')
+    let wait = await message.channel.send('Wait I Going To Edit MagikPhoto....')
     let userAvatar = (target.displayAvatarURL);
     if (['jpg', 'jpeg', 'gif', 'png', 'webp'].some(x => args.join(' ').includes(x))) {
         userAvatar = args.join(' ').replace(/gif|webp/g, 'jpg')
@@ -459,7 +459,7 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
     return;
   }
     let chatchannel = message.guild.channels.find(`name`, "announcements");
-    if(!chatchannel) return message.channel.send("you need create channel #announcements to chat !");
+    if(!chatchannel) return message.channel.send("you need create channel #announcements to use annto !");
     message.delete().catch(O_o=>{});
     chatchannel.send(args.join(" "));
    }
@@ -470,8 +470,8 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
     message.reply("```Create #annoucements first and do k!chatembed on the channel you want message sand to #chatto```");
     return;
   }
-    let chatchannel = message.guild.channels.find(`name`, "chatto");
-    if(!chatchannel) return message.channel.send("you need create channel #chatto to chat !");
+    let chatchannel = message.guild.channels.find(`name`, "chat");
+    if(!chatchannel) return message.channel.send("you need create channel #chat to chatto !");
     message.delete().catch(O_o=>{});
     chatchannel.send(args.join(" "));
 
