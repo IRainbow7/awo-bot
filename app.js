@@ -822,6 +822,14 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
     msg.delete();
 }
 
+   if(command === "playinglist" || command === "autoroleplaying") {
+ const playing = new Discord.RichEmbed()
+ .setColor('RANDOM')
+ .setDescription("**▫Playing PLAYERUNKNOWN'S BATTLEGROUNDS\n▫Playing Counter-Strike Global Offensive\n▫Playing Grand Theft Auto V\n▫Playing Minecraft\n▫Playing Fortnite\n▫Playing Overwatch\n▫Playing Rules Of Survival**")
+ .setThumbnail(message.author.avatarURL)
+ .setFooter("AutoRole-Playing-List")
+message.channel.send(playing)
+
    if(command === "help") {
     const serverEmbed = new Discord.RichEmbed()
     .setAuthor(`${config.prefix}commands`, message.author.avatarURL)
