@@ -26,6 +26,7 @@ const moment = require('moment');
 
 let os = require('os')
 let cpuStat = require("cpu-stat")
+let prefix = "k!";
 
 client.on("message", (message) => {
 const swearWords = ["fuck", "FUCK", "SHIT", "shit", "PORN", "porn", "xnxx", "XNXX",];
@@ -47,7 +48,7 @@ client.on('ready', () => {
 
 function setActivity() {
     //Variable Array for what the setGame can be set to
-    var Gameinfo = [`${config.prefix}invite`, `Run on ${client.guilds.size} Servers`, `${config.prefix}help`,
+    var Gameinfo = [`${prefix}invite`, `Run on ${client.guilds.size} Servers`, `${prefix}help`,
         `Using ${(((process.memoryUsage().heapUsed)/1024)/1024).toFixed(0)}Mb's of RAM`, `Ping to API: ${(client.ping).toFixed(0)} Ms`, `I ❤ CAMBODIA` // Change these to what you want, add as many or as few as you want to
     ]
 
@@ -211,7 +212,7 @@ client.on("guildCreate", async guild => {
 //
 client.on("message", async message => {
     if(message.author.bot) return;
-    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase(); 
 
   if(command === "leftserver" || command === "leaveserver") {
