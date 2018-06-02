@@ -66,7 +66,7 @@ setInterval(setActivity, 1000 * 60 * 2)
 
 client.on("presenceUpdate", (oldMember, newMember) => {
   let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing PLAYERUNKNOWN'S BATTLEGROUNDS");
+  let playRole = guild.roles.find("name", "PLAYERUNKNOWN'S BATTLEGROUNDS");
   if(!playRole) return;  
  
   if(newMember.user.presence.game && newMember.user.presence.game.name === "PLAYERUNKNOWN'S BATTLEGROUNDS") {
@@ -81,7 +81,7 @@ client.on("presenceUpdate", (oldMember, newMember) => {
 
 client.on("presenceUpdate", (oldMember, newMember) => {
   let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing Rules Of Survival");
+  let playRole = guild.roles.find("name", "Rules Of Survival");
   if(!playRole) return;  
  
   if(newMember.user.presence.game && newMember.user.presence.game.name === "Rules Of Survival") {
@@ -96,7 +96,7 @@ client.on("presenceUpdate", (oldMember, newMember) => {
 
 client.on("presenceUpdate", (oldMember, newMember) => {
   let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing DOTA 2");
+  let playRole = guild.roles.find("name", "DOTA 2");
   if(!playRole) return;  
  
   if(newMember.user.presence.game && newMember.user.presence.game.name === "DOTA 2") {
@@ -111,10 +111,10 @@ client.on("presenceUpdate", (oldMember, newMember) => {
 
 client.on("presenceUpdate", (oldMember, newMember) => {
   let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing Osu");
+  let playRole = guild.roles.find("name", "Osu");
   if(!playRole) return;  
  
-  if(newMember.user.presence.game && newMember.user.presence.game.name === "osu") {
+  if(newMember.user.presence.game && newMember.user.presence.game.name === "osu!") {
     newMember.addRole(playRole);
   } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
     newMember.removeRole(playRole);
@@ -127,7 +127,7 @@ client.on("presenceUpdate", (oldMember, newMember) => {
 
 client.on("presenceUpdate", (oldMember, newMember) => {
   let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing Overwatch");
+  let playRole = guild.roles.find("name", "Overwatch");
   if(!playRole) return;  
  
   if(newMember.user.presence.game && newMember.user.presence.game.name === "Overwatch") {
@@ -142,7 +142,7 @@ client.on("presenceUpdate", (oldMember, newMember) => {
  
 client.on("presenceUpdate", (oldMember, newMember) => {
   let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing Counter-Strike Global Offensive");
+  let playRole = guild.roles.find("name", "Counter-Strike Global Offensive");
   if(!playRole) return;  
  
   if(newMember.user.presence.game && newMember.user.presence.game.name === "Counter-Strike Global Offensive") {
@@ -157,7 +157,7 @@ client.on("presenceUpdate", (oldMember, newMember) => {
  
 client.on("presenceUpdate", (oldMember, newMember) => {
   let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing Fortnite");
+  let playRole = guild.roles.find("name", "Fortnite");
   if(!playRole) return;  
  
   if(newMember.user.presence.game && newMember.user.presence.game.name === "Fortnite") {
@@ -172,7 +172,7 @@ client.on("presenceUpdate", (oldMember, newMember) => {
  
 client.on("presenceUpdate", (oldMember, newMember) => {
   let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing Minecraft");
+  let playRole = guild.roles.find("name", "Minecraft");
   if(!playRole) return;  
  
   if(newMember.user.presence.game && newMember.user.presence.game.name === "Minecraft") {
@@ -187,7 +187,7 @@ client.on("presenceUpdate", (oldMember, newMember) => {
  
 client.on("presenceUpdate", (oldMember, newMember) => {
   let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing Grand Theft Auto V");
+  let playRole = guild.roles.find("name", "Grand Theft Auto V");
   if(!playRole) return;  
  
   if(newMember.user.presence.game && newMember.user.presence.game.name === "Grand Theft Auto V") {
