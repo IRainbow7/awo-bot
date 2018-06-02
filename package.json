@@ -33,7 +33,7 @@
     "snekfetch": "^4.0.0",
     "gif-search": "^2.0.1",
     "figlet": "^1.2.0",
-    //"randomPupp": "^1.1.0",
+    "randomPupp": "^1.1.0",
     "querystring": "^0.2.0",
     "cheerio": "^0.22.0",
     "unfluff": "^3.0.1",
