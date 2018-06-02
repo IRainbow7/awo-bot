@@ -27,8 +27,6 @@ const moment = require('moment');
 let os = require('os')
 let cpuStat = require("cpu-stat")
 
-
-//const swearWords = ["XNXX", "xnxx", "FUCK", "fuck", "SHIT", "shit", "PORN", "porn"];
 client.on("message", (message) => {
 const swearWords = ["fuck", "FUCK", "SHIT", "shit", "PORN", "porn", "xnxx", "XNXX",];
 if( swearWords.some(word => message.content.includes(word)) ) {
