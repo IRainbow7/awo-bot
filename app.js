@@ -824,12 +824,13 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
 
    if(command === "playinglist" || command === "autoroleplaying") {
  const playing = new Discord.RichEmbed()
+ .setTitle(message.author.avatarURL, "AutoRolePlaying ! ⬇")
  .setColor('RANDOM')
  .setDescription("**▫Playing PLAYERUNKNOWN'S BATTLEGROUNDS\n▫Playing Counter-Strike Global Offensive\n▫Playing Grand Theft Auto V\n▫Playing Minecraft\n▫Playing Fortnite\n▫Playing Overwatch\n▫Playing Rules Of Survival\n▫Playing osu!\n▫Playing DOTA 2**")
  .setThumbnail(message.author.avatarURL)
- .addField('Examples To Set :', "Playing Minecraft » Playing <GameName>")
+ .addField('Examples To Use :', "Playing Minecraft » Playing <GameName>")
  .setFooter(`By : ${message.author.username} | AutoRole-Playing-List`)
-  message.channel.send(playing);
+  message.channel.send(playing).then(msg => msg.delete(11000));
   }
 
    if(command === "help") {
