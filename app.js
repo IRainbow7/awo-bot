@@ -312,11 +312,11 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
 	message.channel.send(message2);
   }
 
-   if(command === "autoroleplaying" | command === "playinglist") {
-	   message.delete();
-	   message.channel.send("**AutoRolePlaying :** \n\n__**Example**__\n```Playing Minecraft\nPlaying <GameName>```\n\n**Working On Role :**\n```-PLAYERUNKNOWN'S BATTLEGROUNDS \n-Minecraft \n-Fortnite \n-Grand Theft Auto V \n-Rules Of Survival \n-Counter-Strike Global Offensive \n-Overwatch```");
-}
-				
+//   if(command === "autoroleplaying" | command === "playinglist") {
+//	   message.delete();
+//	   message.channel.send("**AutoRolePlaying :** \n\n__**Example**__\n```Playing Minecraft\nPlaying <GameName>```\n\n**Working On Role :**\n```-PLAYERUNKNOWN'S BATTLEGROUNDS \n-Minecraft \n-Fortnite \n-Grand Theft Auto V \n-Rules Of Survival \n-Counter-Strike Global Offensive \n-Overwatch```");
+//}
+			
     if(command === "hentai") {
   let {body} = await superagent
     .get(`https://nekos.life/api/v2/img/Random_hentai_gif`);
@@ -825,9 +825,10 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
    if(command === "playinglist" || command === "autoroleplaying") {
  const playing = new Discord.RichEmbed()
  .setColor('RANDOM')
- .setDescription("**▫Playing PLAYERUNKNOWN'S BATTLEGROUNDS\n▫Playing Counter-Strike Global Offensive\n▫Playing Grand Theft Auto V\n▫Playing Minecraft\n▫Playing Fortnite\n▫Playing Overwatch\n▫Playing Rules Of Survival**")
+ .setDescription("**▫Playing PLAYERUNKNOWN'S BATTLEGROUNDS\n▫Playing Counter-Strike Global Offensive\n▫Playing Grand Theft Auto V\n▫Playing Minecraft\n▫Playing Fortnite\n▫Playing Overwatch\n▫Playing Rules Of Survival\n▫Playing osu!\n▫Playing DOTA 2**")
  .setThumbnail(message.author.avatarURL)
- .setFooter(`By : ${message.user} | AutoRole-Playing-List`)
+ .addField('Examples To Set :', "Playing Minecraft » Playing <GameName>")
+ .setFooter(`By : ${message.user.username} | AutoRole-Playing-List`)
   message.channel.send(playing);
   }
 
