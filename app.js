@@ -824,11 +824,12 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
 
    if(command === "playinglist" || command === "autoroleplaying") {
  const playing = new Discord.RichEmbed()
- .setTitle(message.author.avatarURL, "AutoRolePlaying ! ⬇")
+ .setTitle("AutoRolePlaying ! ⬇", message.author.avatarURL)
  .setColor('RANDOM')
  .setDescription("**▫Playing PLAYERUNKNOWN'S BATTLEGROUNDS\n▫Playing Counter-Strike Global Offensive\n▫Playing Grand Theft Auto V\n▫Playing Minecraft\n▫Playing Fortnite\n▫Playing Overwatch\n▫Playing Rules Of Survival\n▫Playing osu!\n▫Playing DOTA 2**")
  .setThumbnail(message.author.avatarURL)
  .addField('Examples To Use :', "Playing Minecraft » Playing <GameName>")
+ .addField('SUPPORT OWNER', "[FB OWNER HERE - CLICK HERE TO VIEW PROFILE OWNER](https://www.facebook.com/healongg)")
  .setFooter(`By : ${message.author.username} | AutoRole-Playing-List`)
   message.channel.send(playing).then(msg => msg.delete(11000));
   }
