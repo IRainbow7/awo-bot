@@ -92,7 +92,38 @@ client.on("presenceUpdate", (oldMember, newMember) => {
     
   }  
 });
+
+client.on("presenceUpdate", (oldMember, newMember) => {
+  let guild = newMember.guild;
+  let playRole = guild.roles.find("name", "Playing DOTA 2");
+  if(!playRole) return;  
  
+  if(newMember.user.presence.game && newMember.user.presence.game.name === "DOTA 2") {
+    newMember.addRole(playRole);
+  } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
+    newMember.removeRole(playRole);
+  let guild = newMember.guild;
+  if(!playRole) return;
+    
+  }  
+});
+
+client.on("presenceUpdate", (oldMember, newMember) => {
+  let guild = newMember.guild;
+  let playRole = guild.roles.find("name", "Playing Osu");
+  if(!playRole) return;  
+ 
+  if(newMember.user.presence.game && newMember.user.presence.game.name === "osu") {
+    newMember.addRole(playRole);
+  } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
+    newMember.removeRole(playRole);
+  let guild = newMember.guild;
+  if(!playRole) return;
+    
+  }  
+});
+
+
 client.on("presenceUpdate", (oldMember, newMember) => {
   let guild = newMember.guild;
   let playRole = guild.roles.find("name", "Playing Overwatch");
