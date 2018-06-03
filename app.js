@@ -129,7 +129,7 @@ client.on("presenceUpdate", (oldMember, newMember) => {
   let playRole = guild.roles.find("name", "Playing osu!");
   if(!playRole) return;  
  
-  if(newMember.user.presence.game && newMember.user.presence.game.name === "osu") {
+  if(newMember.user.presence.game && newMember.user.presence.game.name === "osu!") {
     newMember.addRole(playRole);
   } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
     newMember.removeRole(playRole);
