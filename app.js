@@ -264,34 +264,7 @@ if(command === "banslist") {
         icon: 'http://gaia.adage.com/images/bin/image/x-large/iStock47643841422.jpg'
     });
 };
-if(command === "boobs") {
-	    if (!message.channel.nsfw) return message.channel.send({embed: {
-        title: `Boobs only in NSFW channels pls`
-    }})
-
-    const waitMessage = await message.channel.send({ 
-        title: `Ya boi ${message.author.username} is looking for some boobies...`,
-    })
-
-    const options = { // You dont have to make an object, you could do it directly in the get() method if you want, this just looks cleaner
-        url: 'http://api.oboobs.ru/boobs/0/1/random',
-        json: true 
-    }
-
-    get(options).then(boobs => { // Pass in the boobs objects fetched from the API 
-        return waitMessage.edit({embed: {
-            title: `:eyes: Boobies`,
-            image: {
-                url: boobs[0].preview
-            },
-        }})
-    }).catch(error => { // If any error occurs while fetching from the API, edit the message to show the error
-        return waitMessage.edit({
-            title: `No boobies for ${message.author.username} today :(`,
-            description: `\`\`\`js\n${error}\`\`\``,
-        })
-    })
-};
+	
 	
  if(command === "botstats") {
     const os = require('os');
@@ -350,7 +323,7 @@ if(command === "pat") {
         .setColor(0xA901DB)
         .setImage('https://media.giphy.com/media/Y4z9olnoVl5QI/giphy.gif');
     if (!args[0]) {
-        message.channel.send(`<@${message.author.id}> patted <@${message.author.id}>.. Oh wait! You can't pat yourself!`, {
+        message.channel.send(`<@${message.author.id}> Pat <@${message.author.id}>.. Oh wait! You can't pat yourself!`, {
             embed: sadEmb
         });
         return;
@@ -359,7 +332,7 @@ if(command === "pat") {
     if (!message.mentions.users.first()) return message.channel.send(`Please mention user you want to pat`).then(msg => {
         msg.delete(3000)
     });
-    message.channel.send(`<@${message.author.id}> patted ${args[0]}`, {
+    message.channel.send(`<@${message.author.id}> Pat ${args[0]}`, {
         embed: patEmb
     });
 
@@ -952,9 +925,10 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
     .setColor('#FF0000')
     .addField("Dev", "`leftserver`  `glist`")
     .addField("Moderation", "`clear`  `say`  `chatto`  `annto`  `discordpartner`  `kick`  `ban`")
-    .addField("Info", "`serverinfo`  `serverrule`   `topinvites`  `dev`  `invitelist`")
+    .addField("Info", "`serverinfo`  `serverrule`   `topinvites`  `dev`  `invitelist`  `banslist`")
     .addField("General", "`ping`  `avatar`  `emojilist`   `jumboemoji`  `invite`  `botstats`   `userinfo`  `playinglist`")
-    .addField("Fun", "`get`  `bond` `ascii`  `gif`  `random` `status`  `luckymunber`  `profilemagik`")
+    .addField("Fun", "`get`  `ascii`  `gif`  `random` `status`  `luckymunber`  `profilemagik` ")
+    .addField("Roleplay", "`pat`  `kiss`  `bond`")
     .setFooter(`Requested by : ${message.author.tag}`);
 
     return message.channel.send(serverEmbed);
