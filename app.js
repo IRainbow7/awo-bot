@@ -23,6 +23,7 @@ const gifSearch = require("gif-search");
 const figlet = require('figlet');
 const moment = require('moment');
                require("moment-duration-format");
+const { get } = require('request-promise-native');
 
 let os = require('os')
 let cpuStat = require("cpu-stat")
@@ -259,9 +260,37 @@ if(command === "banslist") {
         .setColor(0xCB5A5E)
         .addField('Bans', `\`\`\`${table.table(possiblebans)}\`\`\``);
     send(message.channel, embed, {
-        name: 'bans',
+        name: 'BANS-LIST',
         icon: 'http://gaia.adage.com/images/bin/image/x-large/iStock47643841422.jpg'
     });
+};
+if(command === "boobs") {
+	    if (!message.channel.nsfw) return message.channel.send({embed: {
+        title: `Boobs only in NSFW channels pls`
+    }})
+
+    const waitMessage = await message.channel.send({ 
+        title: `Ya boi ${message.author.username} is looking for some boobies...`,
+    })
+
+    const options = { // You dont have to make an object, you could do it directly in the get() method if you want, this just looks cleaner
+        url: 'http://api.oboobs.ru/boobs/0/1/random',
+        json: true 
+    }
+
+    get(options).then(boobs => { // Pass in the boobs objects fetched from the API 
+        return waitMessage.edit({embed: {
+            title: `:eyes: Boobies`,
+            image: {
+                url: boobs[0].preview
+            },
+        }})
+    }).catch(error => { // If any error occurs while fetching from the API, edit the message to show the error
+        return waitMessage.edit({
+            title: `No boobies for ${message.author.username} today :(`,
+            description: `\`\`\`js\n${error}\`\`\``,
+        })
+    })
 };
 	
  if(command === "botstats") {
