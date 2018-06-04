@@ -238,12 +238,7 @@ client.on("message", async message => {
   };
 	
 	
-if(command === "setnick") {
-	message.member.setNickname(args[0]);
-	
-        message.channel.send(`Your nickname has been changed to **${args[0]}**`).then(msg => msg.delete(8000)).then(msg => msg.react(✅);
-	
-}
+
 
 	
 if(command === "banslist") {
