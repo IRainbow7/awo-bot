@@ -237,6 +237,15 @@ client.on("message", async message => {
     message.guild.leave();
   };
 	
+	
+if(command === "setnick") {
+	message.member.setNickname(args[0]);
+	
+        message.channel.send(`Your nickname has been changed to **${args[0]}**`).then(msg => msg.delete(8000)).then(msg => msg.react(✅);
+	
+}
+
+	
 if(command === "banslist") {
 	let ban = await message.guild.fetchBans().catch(error => {
         return message.channel.send('Sorry, I don\'t have the proper permissions to view bans!');
