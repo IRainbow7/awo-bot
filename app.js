@@ -367,17 +367,29 @@ if(command === "pat") {
      message.channel.send({embed});
    }	
 	
-  if(command === "discordpartner" || command === "discordpartners") {
-   if(!message.member.hasPermission("MANAGE_MESSAGE")) return message.channel.send(`${message.author.username} You Don\'t Have **Manage Message** To Use This Commands !`);
-  message.delete();
-  let owneruser = args[0]; 
-  let servername = args[1];
-  let category = args[2];
-  let category2 = args[3];
-  let category3 = args[4];
-  let description = args[5];
-  let links = args[6];
-  message.channel.send(`<:botton:445430903687217164>**OWNER NAME • ${owneruser}<:botton:445430903687217164>**\n\n<:sparkles_fiery:446628397855145986>**SERVE NAME • ${servername}**<:sparkles_fiery:446628397855145986>\n\n__**• Category**__\n\n${category} • ${category2} • ${category3}\n\n__**Server Description**__\n\n${description}\n\n__**• InviteLInk**__\n\n${links}\n\n**• Submit to advertise discord server** • **https://goo.gl/forms/oAP5JsgYmjGuu70X2**`);
+  if(command === "discordpartner" || command === "dpartner") {
+	  message.delete();
+   if(!message.member.hasPermission("MANAGE_MESSAGE")) return message.channel.send(`${message.author.username} You Don\'t Have **Manage Message** To Use This Commands !`).then(msg => msg.delete(8000));
+  if(!args[0]) {
+       const help = new Discord.RichEmbed()
+       .setTitle(`DiscordPartners Help : **${config.prefix}dpartner @guildname @invitelink @description**\n\n**Ex: ${config.prefix}discordpartner|dpartner MIRAIKURIYAMA https:/discord.gg/ZWWD7zT Community Server !**\n\nnot allow use spec on keyboard!`)
+        return message.channel.send(help).then(msg => msg.delete(8000));
+    }
+
+  let guildname = args[1]; 
+  let invite = args[2];
+  let des = args[3];
+	  const embed = new Discord.RichEmbed()
+	  .setColor('RANDOM')
+	  .setTitle('Discord Partners :')
+	  .addField('📥 Server Name :', guildname)
+	  .addField('🔗 Invite Links :', '[CLICK HERE TO JOIN SERVER]("+invite+")')
+	  .setDescription(`\`\`\`${des}\`\`\``)
+	  .addField('Submit To Advertise Server Disord On Support Server ;', '[SUBMIT HERE](https://goo.gl/forms/oAP5JsgYmjGuu70X2)');
+		
+ message.channel.send(embed);
+	  message.react('👥');
+ // message.channel.send(`**• Submit to advertise discord server** • **https://goo.gl/forms/oAP5JsgYmjGuu70X2**`);
 }
 	
   if(command === "glist" || command === "guildlist") {
