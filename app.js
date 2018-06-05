@@ -381,11 +381,13 @@ if(command === "pat") {
   let des = args[2];
 	  const embed = new Discord.RichEmbed()
 	  .setColor('RANDOM')
-	  .setTitle('Discord Partners :')
-	  .addField('📥 Server Name :', guildname)
+	  .setAuthor('Discord Partners', "https://www.podfeet.com/blog/2018/02/discord/")
+	  .setTitle(`📥 Server Name :  👑${guildname}👑 `)
+	  //.addField('📥 Server Name :', guildname)
 	  .addField('🔗 Invite Links :', `[CLICK HERE TO JOIN SERVER](${invite})`)
-	  .setDescription(`\`\`\`${des}\`\`\``)
-	  .addField('Submit To Advertise D-Server On This Server ;', '[SUBMIT HERE](https://goo.gl/forms/oAP5JsgYmjGuu70X2)');
+	  .addField("📄 Descriptions :", `\`\`\`${des}\`\`\``)
+	  .setFooter(`By ${message.author.username} | DiscordPartner !`)
+	  //.addField('Submit To Advertise D-Server  ;', '[SUBMIT HERE](https://goo.gl/forms/oAP5JsgYmjGuu70X2)');
 		
  message.channel.send(embed);
 	  message.react('👥');
