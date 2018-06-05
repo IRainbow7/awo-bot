@@ -372,20 +372,20 @@ if(command === "pat") {
    if(!message.member.hasPermission("MANAGE_MESSAGE")) return message.channel.send(`${message.author.username} You Don\'t Have **Manage Message** To Use This Commands !`).then(msg => msg.delete(8000));
   if(!args[0]) {
        const help = new Discord.RichEmbed()
-       .setTitle(`DiscordPartners Help : **${config.prefix}dpartner @guildname @invitelink @description**\n\n**Ex: ${config.prefix}discordpartner|dpartner MIRAIKURIYAMA https:/discord.gg/ZWWD7zT Community Server !**\n\nnot allow use spec on keyboard!`)
+       .addField(`DiscordPartners Help : **${config.prefix}dpartner @guildname @invitelink @description**\n\n**Ex: ${config.prefix}discordpartner|dpartner MIRAIKURIYAMA https:/discord.gg/ZWWD7zT Community Server !**\n\nnot allow use spec on keyboard!`)
         return message.channel.send(help).then(msg => msg.delete(8000));
     }
 
-  let guildname = args[1]; 
-  let invite = args[2];
-  let des = args[3];
+  let guildname = args[0]; 
+  let invite = args[1];
+  let des = args[2];
 	  const embed = new Discord.RichEmbed()
 	  .setColor('RANDOM')
 	  .setTitle('Discord Partners :')
 	  .addField('📥 Server Name :', guildname)
-	  .addField('🔗 Invite Links :', '[CLICK HERE TO JOIN SERVER]("+invite+")')
+	  .addField('🔗 Invite Links :', `[CLICK HERE TO JOIN SERVER](${invite})`)
 	  .setDescription(`\`\`\`${des}\`\`\``)
-	  .addField('Submit To Advertise Server Disord On Support Server ;', '[SUBMIT HERE](https://goo.gl/forms/oAP5JsgYmjGuu70X2)');
+	  .addField('Submit To Advertise D-Server On This Server ;', '[SUBMIT HERE](https://goo.gl/forms/oAP5JsgYmjGuu70X2)');
 		
  message.channel.send(embed);
 	  message.react('👥');
