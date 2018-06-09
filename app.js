@@ -231,7 +231,7 @@ const embed = new Discord.RichEmbed()
 .setFooter('MEMBER JOIN !')
 .setTimestamp()
     .setDescription(`🔵 **[ ${member} ]** \nWELCOME TO **${member.guild.name}** SERVER  , YOU ARE A MEMBER : **${member.guild.memberCount}**\n• You Want To Help Please Content Server Owner : **${member.guild.owner.user.tag}** `);
-member.send(embed);
+member.channel.send(embed);
 });   
 
 client.on("guildMemberRemove", async member => {
@@ -241,7 +241,7 @@ const embed = new Discord.RichEmbed()
 .setFooter('MEMBER LEFT !')
 .setTimestamp()
     .setDescription(`🔴 **[ ${member} ]** \nHAS LEFT **${member.guild.name}** SERVER  , THE SERVER NOW : **${member.guild.memberCount}** USER ! `);
-member.send(embed);
+member.channel.send(embed);
 });      
 
 //
