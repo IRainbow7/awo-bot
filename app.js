@@ -227,12 +227,22 @@ client.on("guildCreate", async guild => {
 client.on("guildMemberAdd", async member => {
     let memberjoin = member.guild.channels.find('name', "welcome");
 const embed = new Discord.RichEmbed()
-.setThambnail(member)
-.setFooter('New Member !')
+.setThambnail(member.user.avatarURL)
+.setFooter('MEMBER JOIN !')
 .setTimestemp()
-    .setDescription(`🔵 **[ ${member} ]<${member.id}>** \nWELCOME TO **${member.guild.name}** SERVER  , YOU ARE A MEMBER : **${member.guild.memberCount}**\n• You Want To Help Please Content Server Owner : **${member.guild.owner.user.tag}** `);
+    .setDescription(`🔵 **[ ${member} ]** \nWELCOME TO **${member.guild.name}** SERVER  , YOU ARE A MEMBER : **${member.guild.memberCount}**\n• You Want To Help Please Content Server Owner : **${member.guild.owner.user.tag}** `);
 member.send(embed);
 });   
+
+client.on("guildMemberRemove", async member => {
+    let memberjoin = member.guild.channels.find('name', "welcome");
+const embed = new Discord.RichEmbed()
+.setThambnail(member.user.avatarURL)
+.setFooter('MEMBER LEFT !')
+.setTimestemp()
+    .setDescription(`🔴 **[ ${member} ]** \nHAS LEFT **${member.guild.name}** SERVER  , THE SERVER NOW : **${member.guild.memberCount}** USER ! `);
+member.send(embed);
+});      
 
 //
 client.on("message", async message => {
