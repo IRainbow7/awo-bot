@@ -226,8 +226,12 @@ client.on("guildCreate", async guild => {
 
 client.on("guildMemberAdd", async member => {
     let memberjoin = member.guild.channels.find('name', "welcome");
-    memberjoin.send(`🔵 **[ ${member} ]<${member.id}>** \nWELCOME TO **${member.guild.name}** SERVER  , YOU ARE A MEMBER : **${member.guild.memberCount}**\n• You Want To Help Please Content Server Owner : **${member.guild.owner.user.tag}** `);
-    member.react("🎉");
+const embed = new Discord.RichEmbed()
+.setThambnail(member)
+.setFooter('New Member !')
+.setTimestemp()
+    .setDescription(`🔵 **[ ${member} ]<${member.id}>** \nWELCOME TO **${member.guild.name}** SERVER  , YOU ARE A MEMBER : **${member.guild.memberCount}**\n• You Want To Help Please Content Server Owner : **${member.guild.owner.user.tag}** `);
+member.send(embed);
 });   
 
 //
