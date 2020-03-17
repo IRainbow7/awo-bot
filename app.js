@@ -491,7 +491,7 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
  }
 
    if(command === "dev" || command === "developers") {
-   message.channel.send('**DEVELOPERS IS :**\n\n__**•  TaMoToJiᵛᵉʳᶦᶠᶦᵉᵈ林坓龙#5881**__').then(msg => msg.delete(10000));
+   message.channel.send('**DEVELOPERS IS :**\n\n**DISCORD** • `HeaaLOng#5881`\n**FACEBOOK** • `https://www.facebook.com/heaalong855` ').then(msg => msg.delete(10000));
    }
 
     if(command === 'botinfo') {
