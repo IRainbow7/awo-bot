@@ -27,7 +27,7 @@ const { get } = require('request-promise-native');
 
 let os = require('os')
 let cpuStat = require("cpu-stat")
-let prefix = "k!";
+let prefix = config.prefix;
 
 client.on("message", (message) => {
 const swearWords = ["fuck", "FUCK", "SHIT", "shit", "PORN", "porn", "xnxx", "XNXX",];
