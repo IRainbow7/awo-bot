@@ -974,11 +974,7 @@ if(command === "serverrule") {
    // if (!DMALL) return message.channel.send(""+message.member+" Please Enter Your Text To Dm Player From Server");
 
     message.guild.members.forEach((player) => {
-        message.guild.member(player).send({embed: {
-   	author: {
-		name: '${message.guild.name}',
-		icon_url: 'https://discordapp.com/channels/437988836111286283/438339455141543936/689803693260144678',
-	},       
+        message.guild.member(player).send({embed: {      
           color: 0xffffff,
        //   Author: `${mess`,
           title: `${Message}`,
@@ -1008,13 +1004,13 @@ if(command === "serverrule") {
         message.guild.member(player).send({embed: {
           color: 0xffffff,
        //   Author: `${mess`,
-          title: `► SUPPORT SERVER`,
-          description: `[CLICK HERE](https://discord.gg/ZWWD7zT)`,
+          title: `► SUPPORT DEVELOPRER`,
+          description: `FACEBOOK  ACC : [CLICK HERE](https://www.facebook.com/heaalong855)\nDISCORD SERER :[CLICK HERE](https://discord.gg/ZWWD7zT)`,
         }});
     });
 
     message.channel.send("<@"+message.author.id+"> Your Dm Has Been Send To Player !").then(m => m.delete(1000));
-
+    message.react("📥");
 
 };
 
