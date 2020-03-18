@@ -24,7 +24,7 @@ const figlet = require('figlet');
 const moment = require('moment');
                require("moment-duration-format");
 const { get } = require('request-promise-native');
-const prefix = ("k!");
+const prefix = ('./config.json');
 
 let os = require('os')
 let cpuStat = require("cpu-stat")
@@ -41,6 +41,17 @@ if( swearWords.some(word => message.content.includes(word)) ) {
 //const hook = new Discord.WebhookClient('447643495528923146', 'Bendsxen4drwRTJVLOM5f9_Ns0gfPYkWPdOABYo8pJahGi0jKX5ZgWQWwvL85xcESUAi');
 
 //hook.send(`📡 **RD-BOT** • Restarting Successfully... !`);
+bot.on('guildCreate', (guild) => { // If the Bot was added on a server, proceed
+    if (!guildConf[guild.id]) { // If the guild's id is not on the GUILDCONF File, proceed
+	guildConf[guild.id] = {
+		prefix: config.prefix
+	}
+    }
+     fs.writeFile('./storages/guildConf.json', JSON.stringify(guildConf, null, 2), (err) => {
+     	if (err) console.log(err)
+	})
+});
+
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag} on ${client.guilds.size} Servers ..`);
@@ -100,8 +111,11 @@ memberjoin.send(embed);
 //
 client.on("message", async message => {
     if(message.author.bot) return;
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase(); 
+ //   const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  //  const command = args.shift().toLowerCase(); 
+    var args = message.content.split(' ').slice(1);
+    var command = message.content.split(' ')[0].replace(guildConf[message.guild.id].prefix, '');
+    
 
   if(command === "leftserver" || command === "leaveserver") {
    message.delete()
