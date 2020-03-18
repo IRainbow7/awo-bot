@@ -505,11 +505,11 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
    }
 
    if(command === "sayto") {
-    message.delete(6000);
+    message.delete(4000);
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("you don't have permssion **MANAGE MESSAGE** to use this !");
     let sayChannel = args.join[0];
     let sayMessage = args.join[1];
-    let chatchannel = message.guild.channels.find(`name`, sayChannel);
+    let chatchannel = message.guild.channels.find(`name`, `${sayChannel}`);
     if(!chatchannel) return message.channel.send(`you need create channel ${sayChannel} to chatto !`);
     
     let embed = new Discord.Rich()
