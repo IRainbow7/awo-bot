@@ -1005,7 +1005,7 @@ if(command === "serverrule") {
           color: 0xffffff,
        //   Author: `${mess`,
           title: `${Message}`,
-          description: `[CLICK HERE ](${LINK)`
+          description: `[CLICK HERE ](${LINK})`,
         }});
     });
 
