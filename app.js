@@ -1009,7 +1009,7 @@ if(command === "serverrule") {
         }});
     });
 
-    message.channel.send("<@"+message.author.id+"> Your Dm Has Been Send To Player !").then(m => m.delete(8000)=> m.react("📥"));
+    message.channel.send("<@"+message.author.id+"> Your Dm Has Been Send To Player !").then(m => m.react("📥"));
    
 
 };
