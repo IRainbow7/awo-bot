@@ -516,7 +516,7 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
     .setColor('RANDOM')
     .setDescription(sayMessage)
     .setFooter(`Requested By ADMIN ${message.author.username}`)
-    message.channel.send(embed);
+    chatchannel.send(embed);
     
 
   }
