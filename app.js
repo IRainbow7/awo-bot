@@ -24,7 +24,7 @@ const figlet = require('figlet');
 const moment = require('moment');
                require("moment-duration-format");
 const { get } = require('request-promise-native');
-const prefix = ("./config.prefix");
+const prefix = ("./config.json");
 
 let os = require('os')
 let cpuStat = require("cpu-stat")
