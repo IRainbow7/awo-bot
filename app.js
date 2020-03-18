@@ -971,7 +971,7 @@ if(command === "serverrule") {
           return message.reply("You Dont Have Permission");
       let DMALL = args.join(" ").slice(0);
       let Message = args.join(" ").slice(1);
-    if (!DMALL) return message.channel.send(""+message.member+" Please Enter Your Text To Dm Player From Server");
+   // if (!DMALL) return message.channel.send(""+message.member+" Please Enter Your Text To Dm Player From Server");
 
     message.guild.members.forEach((player) => {
         message.guild.member(player).send({embed: {
@@ -993,22 +993,23 @@ if(command === "serverrule") {
 };
 
    if(command === "prserver") {
+      message.delete(500)
       let member = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
       //if(!message.member.hasPermission("ADMINISTRATOR"))
      // let devID = "356510829920780289"
-      if(message.author.id !== "356510829920780289") return message.reply(`**YOu Can't Do It , Only Bot Developer! || Do ${config.prefix}dev To Slow BOT DEVELOPER** `).then(msg => msg.delete(9000));
+      if(message.author.id !== "356510829920780289") return message.reply(`> You Can't Do It , Only Bot Developer! || Do **${config.prefix}dev** To Slow BOT DEVELOPER`).then(msg => msg.delete(10000));
        
      // return message.reply("You Dont Have Permission");
-      let Message = args.join(" ").slice(0);
-      let LINK = args.join(" ").slice(1);
-    if (!LINK) return message.channel.send(""+message.member+" Please Enter Your Text To Dm Player From Server");
+     // let Message = args.join(" ").slice(0);
+    //  let LINK = args.join(" ").slice(1);
+   // if (!LINK) return message.channel.send(""+message.member+" Please Enter Your Text To Dm Player From Server");
 
     message.guild.members.forEach((player) => {
         message.guild.member(player).send({embed: {
           color: 0xffffff,
        //   Author: `${mess`,
-          title: `${Message}`,
-          description: `[CLICK HERE ](${LINK})`,
+          title: `► SUPPORT SERVER`,
+          description: `[CLICK HERE](https://discord.gg/ZWWD7zT)`,
         }});
     });
 
