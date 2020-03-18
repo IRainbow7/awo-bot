@@ -12,7 +12,7 @@ const fs = require("fs");
 const client = new Discord.Client();
 const ms = require("ms");
 const encode = require('strict-uri-encode');
-//const snekfetch = require('snekfetch');
+const snekfetch = require('snekfetch');
 const superagent = require("superagent");
 const meme = require('memejs');
 const yoMamma = require('yo-mamma').default;
@@ -24,7 +24,7 @@ const figlet = require('figlet');
 const moment = require('moment');
                require("moment-duration-format");
 const { get } = require('request-promise-native');
-const prefix = ("./config");
+const prefix = ("./config.prefix");
 
 let os = require('os')
 let cpuStat = require("cpu-stat")
