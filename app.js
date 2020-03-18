@@ -28,7 +28,7 @@ const Prefix = config.prefix;
 
 let os = require('os')
 let cpuStat = require("cpu-stat")
-let Prefix = config.prefix;
+//let Prefix = config.prefix;
 
 client.on("message", (message) => {
 const swearWords = ["fuck", "FUCK", "SHIT", "shit", "PORN", "porn", "xnxx", "XNXX",];
