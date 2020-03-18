@@ -514,7 +514,7 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
     
     let embed = new Discord.Rich()
     .setColor('RANDOM')
-    .setDescription(sayMessage)
+    .setDescription(`${sayMessage}`)
     .setFooter(`Requested By ADMIN ${message.author.username}`)
     chatchannel.send(embed);
     
