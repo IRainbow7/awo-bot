@@ -1005,12 +1005,12 @@ if(command === "serverrule") {
           color: 0xffffff,
        //   Author: `${mess`,
           title: `► SUPPORT DEVELOPRER`,
-          description: `FACEBOOK  ACC : [CLICK HERE](https://www.facebook.com/heaalong855)\nDISCORD SERER :[CLICK HERE](https://discord.gg/ZWWD7zT)`,
+          description: `•FACEBOOK  ACC : [CLICK HERE](https://www.facebook.com/heaalong855)\n•DISCORD SERER : [CLICK HERE](https://discord.gg/ZWWD7zT)`,
         }});
     });
 
-    message.channel.send("<@"+message.author.id+"> Your Dm Has Been Send To Player !").then(m => m.delete(1000));
-    message.react("📥");
+    message.channel.send("<@"+message.author.id+"> Your Dm Has Been Send To Player !").then(m => m.delete(8000).then(m => m.react("📥"));
+   
 
 };
 
