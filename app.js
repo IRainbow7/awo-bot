@@ -51,7 +51,7 @@ client.on('ready', () => {
 
 function setActivity() {
     //Variable Array for what the setGame can be set to
-    var Gameinfo = [`${prefix}invite`, `Run on ${client.guilds.size} Servers`, `${prefix}help`,
+    var Gameinfo = [`${./config.prefix}invite`, `Run on ${client.guilds.size} Servers`, `${prefix}help`,
         `Using ${(((process.memoryUsage().heapUsed)/1024)/1024).toFixed(0)}Mb's of RAM`, `Ping to API: ${(client.ping).toFixed(0)} Ms`, `I ❤ CAMBODIA` // Change these to what you want, add as many or as few as you want to
     ]
 
@@ -897,6 +897,29 @@ if(args[0] == "help"){
      
     })
 }
+
+if(command === "picture" ) {
+message.delete();
+let icon = ["https://cdn.discordapp.com/attachments/436451619375153152/460025182166450176/project-preview-large-2.png", "https://cdn.discordapp.com/attachments/436451619375153152/460025749026504714/camera.png"];
+let channelTo = args[0];
+let picture = args[1];
+let channel = message.guild.channels.find("name", channelTo);
+if(!channel) return message.reply(`**Sorry I Cant Find Channel** \`${channelTo}\` !`);
+const embed = new Discord.RichEmbed()
+.setColor('RANDOM')
+.setImage(picture)
+.setTitle("Reaction By : ⬇")
+.setDescription(`\`\`\`👍 LIKE | 👎 DisLike\`\`\``);
+let m = await send(channel, embed, {
+
+		   name: 'Mirai Picture',
+		   icon: 'https://cdn.discordapp.com/attachments/436451619375153152/460025182166450176/project-preview-large-2.png'
+   })
+await m.react("👍");
+await m.react("👎");
+channel.send("\@everyone").then(m => m.delete(300));
+}
+
 
 if(command === "ytc" || command === "youtubechaanel") {
 message.delete()
