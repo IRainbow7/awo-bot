@@ -504,6 +504,16 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
 
    }
 
+   if(command === "sayto") {
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("you don't have permssion **MANAGE MESSAGE** to use this !");
+    let sayOne = args.join[0];
+    let chatchannel = message.guild.channels.find(`name`, sayOne);
+    const sayMessage = args.join[1];
+    message.delete().catch(O_o=>{}); 
+    message.channel.send(sayMessage);
+
+  }
+
 
   if(command === "ctc" || command === "create textchannel") {
   let logs = args.join(" ");
