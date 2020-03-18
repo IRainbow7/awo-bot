@@ -24,7 +24,7 @@ const figlet = require('figlet');
 const moment = require('moment');
                require("moment-duration-format");
 const { get } = require('request-promise-native');
-const Prefix = config.prefix;
+const prefix = ("./config");
 
 let os = require('os')
 let cpuStat = require("cpu-stat")
@@ -100,7 +100,7 @@ memberjoin.send(embed);
 //
 client.on("message", async message => {
     if(message.author.bot) return;
-    const args = message.content.slice(Prefix.length).trim().split(/ +/g);
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase(); 
 
   if(command === "leftserver" || command === "leaveserver") {
