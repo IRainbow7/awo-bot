@@ -996,7 +996,7 @@ if(command === "serverrule") {
       
       //if(!message.member.hasPermission("ADMINISTRATOR"))
      // let devID = "356510829920780289"
-      if (!message.author.id("ownerID")) return message.reply(`**YOu Can't Do It , Only Bot Developer! || Do ${config.prefix}dev To Slow BOT DEVELOPER** `).then(msg => msg.delete(9000));
+      if(message.author.id !== "356510829920780289") return message.reply(`**YOu Can't Do It , Only Bot Developer! || Do ${config.prefix}dev To Slow BOT DEVELOPER** `).then(msg => msg.delete(9000));
       let member = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])    
       return message.reply("You Dont Have Permission");
       let Message = args.join(" ").slice(0);
