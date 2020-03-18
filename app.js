@@ -24,7 +24,7 @@ const figlet = require('figlet');
 const moment = require('moment');
                require("moment-duration-format");
 const { get } = require('request-promise-native');
-const devID = reqire('356510829920780289');
+const devID = require('356510829920780289');
 
 let os = require('os')
 let cpuStat = require("cpu-stat")
