@@ -51,7 +51,7 @@ client.on('ready', () => {
 
 function setActivity() {
     //Variable Array for what the setGame can be set to
-    var Gameinfo = [`${prefix}invite`, `Run on ${client.guilds.size} Servers`, `${prefix}help`,
+    var Gameinfo = [`Run on ${client.guilds.size} Servers`, `${prefix}help`,
         `Using ${(((process.memoryUsage().heapUsed)/1024)/1024).toFixed(0)}Mb's of RAM`, `Ping to API: ${(client.ping).toFixed(0)} Ms`, `I ❤ CAMBODIA` // Change these to what you want, add as many or as few as you want to
     ]
 
