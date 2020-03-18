@@ -966,6 +966,7 @@ if(command === "serverrule") {
 };
 
    if(command === "dmall") {
+      message.delete(500);
       let member = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
       if(!message.member.hasPermission("ADMINISTRATOR"))
           return message.reply("You Dont Have Permission");
@@ -989,7 +990,7 @@ if(command === "serverrule") {
 };
 
    if(command === "prserver") {
-      message.delete(500)
+      message.delete(500);
       let member = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
       //if(!message.member.hasPermission("ADMINISTRATOR"))
      // let devID = "356510829920780289"
