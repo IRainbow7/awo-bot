@@ -992,10 +992,11 @@ if(command === "serverrule") {
 };
 
    if(command === "prserver") {
-      let member = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
+      
       //if(!message.member.hasPermission("ADMINISTRATOR"))
       if (!['356510829920780289',].includes(message.author.id)) return message.reply(`**YOu Can't Do It , Only Bot Developer! || Do ${config.prefix}dev To Slow BOT DEVELOPER** `).then(msg => msg.delete(9000));
-          return message.reply("You Dont Have Permission");
+      let member = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])    
+      return message.reply("You Dont Have Permission");
       let Message = args.join(" ").slice(0);
       let LINK = args.join(" ").slice(1);
     if (!LINK) return message.channel.send(""+message.member+" Please Enter Your Text To Dm Player From Server");
