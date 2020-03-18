@@ -66,7 +66,6 @@ function setActivity() {
 setInterval(setActivity, 1000 * 60 * 2)
 
 
-
 client.on("guildCreate", async guild => {
   const invite = await guild.channels.first().createInvite({
     maxAge: 0
