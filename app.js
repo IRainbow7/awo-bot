@@ -978,8 +978,8 @@ if(command === "serverrule") {
         message.guild.member(player).send({embed: {      
           color: 0xffffff,
        //   Author: `${mess`,
-          title: `${Message}`,
-          description: `${DMALL}`
+          title: `${DMALL}`,
+          description: `${Message}`
 
         }});
     });
