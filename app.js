@@ -41,9 +41,9 @@ if( swearWords.some(word => message.content.includes(word)) ) {
 //const hook = new Discord.WebhookClient('447643495528923146', 'Bendsxen4drwRTJVLOM5f9_Ns0gfPYkWPdOABYo8pJahGi0jKX5ZgWQWwvL85xcESUAi');
 
 //hook.send(`📡 **RD-BOT** • Restarting Successfully... !`);
-bot.on('guildCreate', (guild) => { // If the Bot was added on a server, proceed
-    if (!guildConf[guild.id]) { // If the guild's id is not on the GUILDCONF File, proceed
-	guildConf[guild.id] = {
+client.on('guildCreate', (guild) => { // If the Bot was added on a server, proceed
+    if (!prefix[guild.id]) { // If the guild's id is not on the GUILDCONF File, proceed
+	prefix[guild.id] = {
 		prefix: config.prefix
 	}
     }
