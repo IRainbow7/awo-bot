@@ -27,14 +27,14 @@ const { get } = require('request-promise-native');
 
 let os = require('os')
 let cpuStat = require("cpu-stat")
-let prefix = config.prefix;
+let Prefix = config.prefix;
 
 client.on("message", (message) => {
 const swearWords = ["fuck", "FUCK", "SHIT", "shit", "PORN", "porn", "xnxx", "XNXX",];
 if( swearWords.some(word => message.content.includes(word)) ) {
   message.reply("Oh no you said a bad word!!!");
   message.react('❌');
-  message.delete(9999);
+  message.delete(999);
  }
 });
 //const hook = new Discord.WebhookClient('447643495528923146', 'Bendsxen4drwRTJVLOM5f9_Ns0gfPYkWPdOABYo8pJahGi0jKX5ZgWQWwvL85xcESUAi');
@@ -65,170 +65,6 @@ function setActivity() {
 setInterval(setActivity, 1000 * 60 * 2)
 
 
-client.on("presenceUpdate", (oldMember, newMember) => {
-  let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing PLAYERUNKNOWN'S BATTLEGROUNDS");
-  if(!playRole) return;  
- 
-  if(newMember.user.presence.game && newMember.user.presence.game.name === "PLAYERUNKNOWN'S BATTLEGROUNDS") {
-    newMember.addRole(playRole);
-  } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
-    newMember.removeRole(playRole);
-  let guild = newMember.guild;
-  if(!playRole) return;
-    
-  }  
-});
-
-client.on("presenceUpdate", (oldMember, newMember) => {
-  let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing Rules Of Survival");
-  if(!playRole) return;  
- 
-  if(newMember.user.presence.game && newMember.user.presence.game.name === "Rules Of Survival") {
-    newMember.addRole(playRole);
-  } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
-    newMember.removeRole(playRole);
-  let guild = newMember.guild;
-  if(!playRole) return;
-    
-  }  
-});
-
-client.on("presenceUpdate", (oldMember, newMember) => {
-  let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing DOTA 2");
-  if(!playRole) return;  
- 
-  if(newMember.user.presence.game && newMember.user.presence.game.name === "DOTA 2") {
-    newMember.addRole(playRole);
-  } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
-    newMember.removeRole(playRole);
-  let guild = newMember.guild;
-  if(!playRole) return;
-    
-  }  
-});
-
-client.on("presenceUpdate", (oldMember, newMember) => {
-  let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing osu!");
-  if(!playRole) return;  
- 
-  if(newMember.user.presence.game && newMember.user.presence.game.name === "osu!") {
-    newMember.addRole(playRole);
-  } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
-    newMember.removeRole(playRole);
-  let guild = newMember.guild;
-  if(!playRole) return;
-    
-  }  
-});
-
-client.on("presenceUpdate", (oldMember, newMember) => {
-  let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing osu!");
-  if(!playRole) return;  
- 
-  if(newMember.user.presence.game && newMember.user.presence.game.name === "osu!") {
-    newMember.addRole(playRole);
-  } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
-    newMember.removeRole(playRole);
-  let guild = newMember.guild;
-  if(!playRole) return;
-    
-  }  
-});
-
-client.on("presenceUpdate", (oldMember, newMember) => {
-  let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing Overwatch");
-  if(!playRole) return;  
- 
-  if(newMember.user.presence.game && newMember.user.presence.game.name === "Overwatch") {
-    newMember.addRole(playRole);
-  } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
-    newMember.removeRole(playRole);
-  let guild = newMember.guild;
-  if(!playRole) return;
-    
-  }  
-});
- 
-client.on("presenceUpdate", (oldMember, newMember) => {
-  let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing Counter-Strike Global Offensive");
-  if(!playRole) return;  
- 
-  if(newMember.user.presence.game && newMember.user.presence.game.name === "Counter-Strike Global Offensive") {
-    newMember.addRole(playRole);
-  } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
-    newMember.removeRole(playRole);
-  let guild = newMember.guild;
-  if(!playRole) return;
-    
-  }  
-});
- 
-client.on("presenceUpdate", (oldMember, newMember) => {
-  let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing Fortnite");
-  if(!playRole) return;  
- 
-  if(newMember.user.presence.game && newMember.user.presence.game.name === "Fortnite") {
-    newMember.addRole(playRole);
-  } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
-    newMember.removeRole(playRole);
-  let guild = newMember.guild;
-  if(!playRole) return;
-    
-  }  
-});
- 
-client.on("presenceUpdate", (oldMember, newMember) => {
-  let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing League of Legends");
-  if(!playRole) return;  
- 
-  if(newMember.user.presence.game && newMember.user.presence.game.name === "League of Legends") {
-    newMember.addRole(playRole);
-  } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
-    newMember.removeRole(playRole);
-  let guild = newMember.guild;
-  if(!playRole) return;
-    
-  }  
-});
-
-client.on("presenceUpdate", (oldMember, newMember) => {
-  let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing Minecraft");
-  if(!playRole) return;  
- 
-  if(newMember.user.presence.game && newMember.user.presence.game.name === "Minecraft") {
-    newMember.addRole(playRole);
-  } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
-    newMember.removeRole(playRole);
-  let guild = newMember.guild;
-  if(!playRole) return;
-    
-  }  
-});
- 
-client.on("presenceUpdate", (oldMember, newMember) => {
-  let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing Grand Theft Auto V");
-  if(!playRole) return;  
- 
-  if(newMember.user.presence.game && newMember.user.presence.game.name === "Grand Theft Auto V") {
-    newMember.addRole(playRole);
-  } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
-    newMember.removeRole(playRole);
-  let guild = newMember.guild;
-  if(!playRole) return;
-    
-  }  
-});
 
 client.on("guildCreate", async guild => {
   const invite = await guild.channels.first().createInvite({
@@ -264,7 +100,7 @@ memberjoin.send(embed);
 //
 client.on("message", async message => {
     if(message.author.bot) return;
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const args = message.content.slice(Prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase(); 
 
   if(command === "leftserver" || command === "leaveserver") {
@@ -503,7 +339,7 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
     .addField("Bot Name", client.user.username, true)
     .addField("TotalUser", client.users.size, true)
     .addField("On Servers", client.guilds.size, true)
-    .addField("Bot Create By :", "TaMoToJiᵛᵉʳᶦᶠᶦᵉᵈ林坓龙#5881", true)
+    .addField("Bot Create By :", "HeaaLOng#5881", true)
     .addField("Created On", client.user.createdAt, true);
     return message.channel.send(botembed);
 }
@@ -556,7 +392,7 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
   message.delete();
   const invite = new Discord.RichEmbed()
   .setColor('RANDOM')
-  .setDescription('Check Out From Website To InviteBot or More : \n\n[CLICK HERE](http://www.tamotoji.tk)')
+  .setDescription('Check Out From Website To InviteBot or More : \n\n[CLICK HERE](https://www.facebook.com/heaalong855)')
   message.author.send(invite);
   message.channel.send(`${message.author.username} **Please Check Out From Your DM or Pivite Message !**`);//.then(msg => msg.delete(11000));
   message.react('🔗');
@@ -615,7 +451,7 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
      // return message.reply("You Need Invite 10 People To Get `STATUS` Roles To Use This Commands ! \n\nGo To #bot-command and do `--ranks` to view more role rewards !").then(msg => msg.delete(12000));
     if(!args[0]) {
        const statushelp = new Discord.RichEmbed()
-       .setTitle(`Facebook Status xD : **${config.prefix}status <STATUS>**`)
+       .setTitle(`Facebook Status xD : ${config.prefix}status <STATUS>`)
         return message.channel.send(statushelp).then(msg => msg.delete(8000));
     }
     let status = args.join(" ");
@@ -701,7 +537,7 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
      }
 
 
-  if(command === "bond") {
+  if(command === "love") {
   if(!args[0]) return message.channel.send("**Mention a user or users that you want to bond.** `PREFIX bond <user> <user>`")
 
    var bondLevel = Math.floor(Math.random() * 102);
@@ -983,7 +819,7 @@ if (!['356510829920780289',].includes(message.author.id)) return message.channel
     .addField("Info", "`serverinfo`  `serverrule`   `topinvites`  `dev`  `invitelist`  `banslist`")
     .addField("General", "`ping`  `avatar`  `emojilist`   `jumboemoji`  `invite`  `botstats`   `userinfo`  `playinglist`")
     .addField("Fun", "`get`  `ascii`  `gif`  `random` `status`  `luckymunber`  `profilemagik` ")
-    .addField("Roleplay", "`pat`  `kiss`  `bond`")
+    .addField("Roleplay", "`pat`  `kiss`  `love`")
     .setFooter(`Requested by : ${message.author.tag}`);
 
     return message.channel.send(serverEmbed);
