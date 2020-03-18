@@ -24,7 +24,7 @@ const figlet = require('figlet');
 const moment = require('moment');
                require("moment-duration-format");
 const { get } = require('request-promise-native');
-const devID = require('356510829920780289');
+const ownerID = require('356510829920780289');
 
 let os = require('os')
 let cpuStat = require("cpu-stat")
@@ -995,8 +995,8 @@ if(command === "serverrule") {
    if(command === "prserver") {
       
       //if(!message.member.hasPermission("ADMINISTRATOR"))
-      let devID = "356510829920780289";
-      if (!message.author.id(devID)) return message.reply(`**YOu Can't Do It , Only Bot Developer! || Do ${config.prefix}dev To Slow BOT DEVELOPER** `).then(msg => msg.delete(9000));
+     // let devID = "356510829920780289"
+      if (!message.author.id("ownerID")) return message.reply(`**YOu Can't Do It , Only Bot Developer! || Do ${config.prefix}dev To Slow BOT DEVELOPER** `).then(msg => msg.delete(9000));
       let member = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])    
       return message.reply("You Dont Have Permission");
       let Message = args.join(" ").slice(0);
