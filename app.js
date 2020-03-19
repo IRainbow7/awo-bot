@@ -1029,7 +1029,7 @@ if(command === "serverrule") {
         message.react("📥");
   }
 
-  if(command === !=== "rate") {
+  if(command === "rate") {
    if(!args[0]) return message.channel.send("**Ask me to rate someone or something** `ium rate <someone/something>`");
    let ratings = ["0", "⭐ - 1", "⭐⭐ - 2", "⭐⭐⭐ - 3", "⭐⭐⭐⭐- 4", "⭐⭐⭐⭐⭐ - 5", "⭐⭐⭐⭐⭐⭐ - 6",  "⭐⭐⭐⭐⭐⭐ - 7", "⭐⭐⭐⭐⭐⭐⭐⭐ - 8", "⭐⭐⭐⭐⭐⭐⭐⭐⭐ - 9", "⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ - 10"];
 
